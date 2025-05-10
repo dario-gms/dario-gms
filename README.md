@@ -2,13 +2,17 @@
 
 *Conceito e nome cunhado por Dário Gomes, 2025.*
 
+**© 2025 Dário Gomes Ferreira Jr. Licenciado sob a Licença Creative Commons Atribuição 4.0 Internacional.**
+
+Para visualizar uma cópia desta licença, visite [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/).
+
 ## Introdução
 
 Vivemos em uma era onde a humanidade não apenas conhece o mundo ao seu redor, mas começa a entender suas consequências futuras e tem a capacidade de fazer escolhas conscientes em escala global. A denominação Homo sapiens sapiens — o "homem que sabe que sabe" — já não parece suficiente para descrever essa nova etapa evolutiva da consciência humana.
 
 Por isso, proponho um novo termo científico e filosófico:
 
-> *Homo sapiens prævidens eligens*  
+> *Homo sapiens prævidens eligens*
 > O homem que sabe, prevê e escolhe.
 
 ## Etimologia
@@ -29,14 +33,13 @@ Durante uma conversa reflexiva sobre a evolução humana e o papel da tecnologia
 
 Assim nasceu o nome *Homo sapiens prævidens eligens*, como uma proposta especulativa para um possível próximo estágio de evolução — não física, mas intelectual e moral.
 
-
 ## Direitos e uso
 
-Este nome e conceito foram criados em 2025 por *Dário Gomes Ferreira Jr*.  
-Você pode usá-lo livremente, desde que cite a autoria.
+Este nome e conceito foram criados em 2025 por *Dário Gomes Ferreira Jr*.
+Você pode usá-lo livremente, desde que cite a autoria, conforme os termos da licença Creative Commons Atribuição 4.0 Internacional.
 
 > "Não somos uma nova espécie física ainda, mas talvez sejamos a versão beta da próxima forma de consciência humana."
 
 ---
 
-*Licença:* Creative Commons Attribution 4.0 International (CC BY 4.0)
+*Licença:* Creative Commons Attribution 4.0 International (CC BY 4.0)
