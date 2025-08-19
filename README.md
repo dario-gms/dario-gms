@@ -7,7 +7,20 @@
 
 ---
 
+## Projetos em Destaque
 
+<p align="center">
+  <a href="https://github.com/dario-gms/dario-gms.github.io">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=dario-gms&repo=dario-gms.github.io&theme=radical&show_owner=true&cache_seconds=1" />
+  </a>
+
+  <a href="https://github.com/dario-gms/Dart-do-Zero">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=dario-gms&repo=Dart-do-Zero&theme=radical&show_owner=true&cache_seconds=1" />
+  </a>
+</p>
+
+
+---
 
 ## Troféus
 
