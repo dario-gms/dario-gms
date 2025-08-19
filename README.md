@@ -1,6 +1,6 @@
 <div align="center">  
   
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=200&section=header&text=Dário%20Gomes&fontSize=50&fontColor=00d4ff&animation=twinkling&fontAlignY=35&desc=Flutter%20•%20Dart%20•%20Mobile%20Developer&descSize=20&descAlignY=55" />  
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=200&section=header&text=Dário%20Gomes&fontSize=50&fontColor=00d4ff&animation=twinkling&fontAlignY=35&desc=Dart%20•%20Flutter%20•%20Developer&descSize=20&descAlignY=55" />  
   
   <div style="display: flex; justify-content: center; gap: 20px; margin: 30px 0;">
     <img height="190" src="https://github-readme-stats.vercel.app/api?username=dario-gms&show_icons=true&theme=radical&include_all_commits=true&count_private=true&cache_seconds=1&bg_color=0d1117&border_color=00d4ff&title_color=00d4ff&text_color=ffffff&icon_color=ff6b6b&ring_color=00d4ff&fire_color=ff6b6b&currStreakNum=00d4ff&currStreakLabel=00d4ff&sideNums=00d4ff&sideLabels=ffffff&dates=8cc8ff&hide_border=false&border_radius=15" />
@@ -37,25 +37,6 @@
 ## Troféus & Conquistas  
 
 <img src="https://github-profile-trophy.vercel.app/?username=dario-gms&theme=radical&no-frame=false&no-bg=false&margin-w=10&margin-h=10&row=1&column=7&trophies=Stars,Followers,Commits,Repositories,PullRequest,Languages,MVP,Sponsors,Supporter,Hacktoberfest,GitHubActions" />
-
-<div style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dario-gms&theme=radical&cache_seconds=1" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=dario-gms&theme=radical&utc_offset=8&cache_seconds=1" />
-</div>
-
-
----
-
-<div align="center">
-  
-## Atividade & Contribuições  
- 
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=dario-gms&theme=react-dark&hide_border=true&area=true&point=00d4ff&line=00d4ff&color=ffffff&bg_color=0d1117&cache_seconds=1&custom_title=Contribuições%20em%20Tempo%20Real" />  
-  
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=dario-gms&theme=radical&cache_seconds=1" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=dario-gms&theme=radical&cache_seconds=1" />
-  
-</div>
 
 ---
 
