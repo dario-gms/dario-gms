@@ -46,8 +46,13 @@
 
   <img src="https://komarev.com/ghpvc/?username=dario-gms&style=for-the-badge&color=00d4ff&cache_seconds=1" />  
   
-  <p style="color: #00d4ff; font-family: 'Courier New', monospace;">
-    Powered by Flutter Energy
+  <p style="color: #00d4ff; font-family: 'Courier New', monospace; margin-top: 10px; font-size: 14px;">
+    ⚡ Powered by Flutter Energy ⚡
   </p>
-  
+
+  <p style="color: #8cc8ff; font-family: 'Courier New', monospace; font-size: 13px; margin-top: -5px;">
+    Feito por <strong>Dário</strong> &copy; 2025
+  </p>
+
 </div>
+
