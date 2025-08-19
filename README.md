@@ -47,7 +47,7 @@
   <img src="https://komarev.com/ghpvc/?username=dario-gms&style=for-the-badge&color=00d4ff&cache_seconds=1" />  
   
   <p style="color: #00d4ff; font-family: 'Courier New', monospace;">
-    Última atualização: Em tempo real • 🚀 Powered by Flutter Energy
+    Powered by Flutter Energy
   </p>
   
 </div>
