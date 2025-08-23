@@ -15,9 +15,12 @@
 
 <div align="center">
   
-## Projetos em Destaque  
+## ⚡ Projetos em Destaque  
   
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin: 20px 0;">
+    <a href="https://github.com/dario-gms/Flash-Prompt-Generator">
+      <img src="https://github-readme-stats.vercel.app/api/pin/?username=dario-gms&repo=Flash-Prompt-Generator&theme=radical&show_owner=true&cache_seconds=1&bg_color=0d1117&border_color=00d4ff&title_color=00d4ff&text_color=ffffff&icon_color=ff6b6b&hide_border=false&border_radius=15" />
+    </a>
     <a href="https://github.com/dario-gms/dario-gms.github.io">
       <img src="https://github-readme-stats.vercel.app/api/pin/?username=dario-gms&repo=dario-gms.github.io&theme=radical&show_owner=true&cache_seconds=1&bg_color=0d1117&border_color=00d4ff&title_color=00d4ff&text_color=ffffff&icon_color=ff6b6b&hide_border=false&border_radius=15" />
     </a>
@@ -35,24 +38,20 @@
 <div align="center">
   
 ## Troféus & Conquistas  
-
 <img src="https://github-profile-trophy.vercel.app/?username=dario-gms&theme=radical&no-frame=false&no-bg=false&margin-w=10&margin-h=10&row=1&column=7&trophies=Stars,Followers,Commits,Repositories,PullRequest,Languages,MVP,Sponsors,Supporter,Hacktoberfest,GitHubActions" />
+
+</div>
 
 ---
 
 <div align="center">  
-
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer&animation=twinkling" />  
-
   <img src="https://komarev.com/ghpvc/?username=dario-gms&style=for-the-badge&color=00d4ff&cache_seconds=1" />  
   
   <p style="color: #00d4ff; font-family: 'Courier New', monospace; margin-top: 10px; font-size: 14px;">
     ⚡ Powered by Flutter Energy ⚡
   </p>
-
   <p style="color: #8cc8ff; font-family: 'Courier New', monospace; font-size: 13px; margin-top: -5px;">
     Feito por <strong>Dário</strong> &copy; 2025
   </p>
-
 </div>
-
