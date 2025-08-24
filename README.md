@@ -33,8 +33,8 @@
 
 <div align="center">
   
-## Troféus & Conquistas  
-<img src="https://github-profile-trophy.vercel.app/?username=dario-gms&theme=radical&no-frame=false&no-bg=false&margin-w=10&margin-h=10&row=1&column=7&trophies=Stars,Followers,Commits,Repositories,PullRequest,Languages,MVP,Sponsors,Supporter,Hacktoberfest,GitHubActions" />
+<!-- ## Troféus & Conquistas  
+<img src="https://github-profile-trophy.vercel.app/?username=dario-gms&theme=radical&no-frame=false&no-bg=false&margin-w=10&margin-h=10&row=1&column=7&trophies=Stars,Followers,Commits,Repositories,PullRequest,Languages,MVP,Sponsors,Supporter,Hacktoberfest,GitHubActions" /> -->
 </div>
 <div align="center">  
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer&animation=twinkling" />  
