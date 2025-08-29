@@ -31,6 +31,23 @@
   
 </div>
 
+
+
+<div align="center">
+
+
+  
+
+
+## Troféus & Conquistas  
+
+
+[![trophy](https://github-profile-trophy-roan.vercel.app/?username=dario-gms&theme=radical&row=1&column=7&no-bg=true&no-frame=true&margin-w=10&margin-h=10)](https://github.com/ryo-ma/github-profile-trophy)
+
+
+
+</div>
+
 <div align="center">  
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer&animation=twinkling" />  
   <img src="https://komarev.com/ghpvc/?username=dario-gms&style=for-the-badge&color=00d4ff&cache_seconds=random" />  
