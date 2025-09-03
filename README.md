@@ -56,7 +56,7 @@
     ⚡ Powered by Flutter Energy ⚡
   </p>
   <p style="color: #8cc8ff; font-family: 'Courier New', monospace; font-size: 13px; margin-top: -5px;">
-    Feito por <strong>Dário</strong> &copy; 2025
+    Contato: <strong>dariogms.github@protonmail.com</strong>
   </p>
 </div>
 
