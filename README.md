@@ -7,7 +7,7 @@
     <img height="190" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dario-gms&layout=compact&langs_count=12&theme=radical&bg_color=0d1117&border_color=00d4ff&title_color=00d4ff&text_color=ffffff&hide_border=false&border_radius=15&card_width=320" />
   </div>  
   
-  <img height="200" src="https://github-readme-streak-stats.herokuapp.com?user=dario-gms&theme=radical&background=0d1117&border=00d4ff&stroke=00d4ff&ring=ff6b6b&fire=ff6b6b&currStreakNum=00d4ff&sideNums=00d4ff&currStreakLabel=00d4ff&sideLabels=ffffff&dates=8cc8ff&excludeDaysLabel=666666" />
+
   
 </div>
 
