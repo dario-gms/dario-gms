@@ -40,7 +40,7 @@ Também venho me aprofundando cada vez mais em **segurança da informação e ci
 
 <div align="center">
 
-[![Email](https://img.shields.io/badge/Email-00d4ff?style=for-the-badge&logo=protonmail&logoColor=white)](mailto:dariogms.github@protonmail.com)
+📧 **Email:** `dariogms.github@protonmail.com`  
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-00d4ff?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/d%C3%A1rio-gomes-73b0a221b/)
 
