@@ -30,7 +30,7 @@ Também venho me aprofundando cada vez mais em **segurança da informação e ci
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy-roan.vercel.app/?username=dario-gms&theme=radical&row=1&column=5&no-bg=true&no-frame=true&margin-w=10&margin-h=10)](https://github.com/ryo-ma/github-profile-trophy)
+[![trophy](https://github-profile-trophy-fork-two.vercel.app/?username=dario-gms&theme=radical&row=1&column=5&no-bg=true&no-frame=true&margin-w=10&margin-h=10)](https://github.com/ryo-ma/github-profile-trophy)
 
 </div>
 
