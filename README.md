@@ -26,21 +26,24 @@ Também venho me aprofundando cada vez mais em **segurança da informação e ci
 
 ---
 
-## 🏆 Troféus & Conquistas  
+## Estatísticas
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy-fork-two.vercel.app/?username=dario-gms&theme=radical&row=1&column=5&no-bg=true&no-frame=true&margin-w=10&margin-h=10)](https://github.com/ryo-ma/github-profile-trophy)
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=dario-gms&theme=radical" />
+<img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=dario-gms&theme=radical" />
+
+</div>
 
 </div>
 
 ---
 
-## 🌐 Contato & Redes
+## Contato & Redes
 
 <div align="center">
 
-📧 **Email:** `dariogms.github@protonmail.com`  
+**Email:** `dariogms.github@protonmail.com`  
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-00d4ff?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/d%C3%A1rio-gomes-73b0a221b/)
 
@@ -53,7 +56,7 @@ Também venho me aprofundando cada vez mais em **segurança da informação e ci
   <img src="https://komarev.com/ghpvc/?username=dario-gms&style=for-the-badge&color=00d4ff" />  
   
   <p style="color: #00d4ff; font-family: 'Courier New', monospace; margin-top: 10px; font-size: 14px;">
-    🔒 Construindo o futuro digital com segurança e propósito
+    Construindo o futuro digital com segurança e propósito
   </p>
   
 </div>
