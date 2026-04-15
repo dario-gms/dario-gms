@@ -23,6 +23,14 @@
 
 <div align="center">
 
+<img width="100%" src="./assets/trophies-cyberpunk.svg" />
+
+</div>
+
+---
+
+<div align="center">
+
 <img width="100%" src="./assets/contribution-monthly-pulse.svg" />
 
 </div>
@@ -31,7 +39,7 @@
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0d0d0d?style=for-the-badge&logo=linkedin&logoColor=00cfff)](https://www.linkedin.com/in/d%C3%A1rio-gomes-73b0a221b/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0d0d0d?style=for-the-badge&logo=linkedin&logoColor=00cfff)](https://www.linkedin.com/in/dariogms/)
 <br />
 [![Email](https://img.shields.io/badge/ProtonMail-0d0d0d?style=for-the-badge&logo=protonmail&logoColor=ff003c)](mailto:dariogms.github@protonmail.com)
 <br />
