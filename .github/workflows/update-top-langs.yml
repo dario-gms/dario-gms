@@ -1,6 +1,13 @@
 name: Update Top Languages Card
 
 on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - ".github/workflows/update-top-langs.yml"
+      - "scripts/generate_top_langs_svg.py"
   schedule:
     - cron: "17 3 * * *"
   workflow_dispatch:
@@ -42,4 +49,3 @@ jobs:
           git add assets/top-langs-cyberpunk.svg
           git commit -m "chore: update top languages card"
           git push
-
