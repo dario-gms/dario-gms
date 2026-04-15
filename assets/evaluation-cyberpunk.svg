@@ -16,75 +16,145 @@
 
   
   <g transform="translate(25, 72)">
-    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010" />
+    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010">
+      <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="2.2s" begin="0.15s" repeatCount="indefinite" />
+    </rect>
     <text x="89.0" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">Stars</text>
 
     <g transform="translate(89.0, 90)">
+      <path id="orbit0" d="M 0 -44 A 44 44 0 1 1 0 44 A 44 44 0 1 1 0 -44" fill="none" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#350015" stroke-width="8" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#FF6633" stroke-width="8"
         stroke-linecap="round" transform="rotate(-90)"
-        stroke-dasharray="198.40 276.46" />
-      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">A-</text>
+        stroke-dasharray="0 276.46">
+        <animate attributeName="stroke-dasharray" from="0 276.46" to="198.40 276.46" dur="1.1s" begin="0.15s" fill="freeze" />
+        <animate attributeName="stroke-width" values="8;9.4;8" dur="1.6s" begin="0.15s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3.4" fill="#FF6633">
+        <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#orbit0" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.1s" begin="0.15s" repeatCount="indefinite" />
+      </circle>
+      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">A-
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="1.6s" begin="0.15s" repeatCount="indefinite" />
+      </text>
     </g>
 
     <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">122</text>
   </g>
 
   <g transform="translate(218, 72)">
-    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010" />
-    <text x="89.0" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">Commits</text>
+    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010">
+      <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="2.2s" begin="0.27s" repeatCount="indefinite" />
+    </rect>
+    <text x="89.0" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">Commits (2026)</text>
 
     <g transform="translate(89.0, 90)">
-      <circle cx="0" cy="0" r="44" fill="none" stroke="#350015" stroke-width="8" />
-      <circle cx="0" cy="0" r="44" fill="none" stroke="#FF6633" stroke-width="8"
-        stroke-linecap="round" transform="rotate(-90)"
-        stroke-dasharray="253.34 276.46" />
-      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">A+</text>
-    </g>
-
-    <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">1.0k</text>
-  </g>
-
-  <g transform="translate(411, 72)">
-    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010" />
-    <text x="89.0" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">Followers</text>
-
-    <g transform="translate(89.0, 90)">
+      <path id="orbit1" d="M 0 -44 A 44 44 0 1 1 0 44 A 44 44 0 1 1 0 -44" fill="none" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#350015" stroke-width="8" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#FF003C" stroke-width="8"
         stroke-linecap="round" transform="rotate(-90)"
-        stroke-dasharray="276.46 276.46" />
-      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">S</text>
+        stroke-dasharray="0 276.46">
+        <animate attributeName="stroke-dasharray" from="0 276.46" to="276.46 276.46" dur="1.1s" begin="0.27s" fill="freeze" />
+        <animate attributeName="stroke-width" values="8;9.4;8" dur="1.6s" begin="0.27s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3.4" fill="#FF003C">
+        <animateMotion dur="3.4s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#orbit1" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.1s" begin="0.27s" repeatCount="indefinite" />
+      </circle>
+      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">S
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="1.6s" begin="0.27s" repeatCount="indefinite" />
+      </text>
+    </g>
+
+    <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">1.3k</text>
+  </g>
+
+  <g transform="translate(411, 72)">
+    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010">
+      <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="2.2s" begin="0.39s" repeatCount="indefinite" />
+    </rect>
+    <text x="89.0" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">Followers</text>
+
+    <g transform="translate(89.0, 90)">
+      <path id="orbit2" d="M 0 -44 A 44 44 0 1 1 0 44 A 44 44 0 1 1 0 -44" fill="none" />
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#350015" stroke-width="8" />
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#FF003C" stroke-width="8"
+        stroke-linecap="round" transform="rotate(-90)"
+        stroke-dasharray="0 276.46">
+        <animate attributeName="stroke-dasharray" from="0 276.46" to="276.46 276.46" dur="1.1s" begin="0.39s" fill="freeze" />
+        <animate attributeName="stroke-width" values="8;9.4;8" dur="1.6s" begin="0.39s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3.4" fill="#FF003C">
+        <animateMotion dur="3.6s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#orbit2" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.1s" begin="0.39s" repeatCount="indefinite" />
+      </circle>
+      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">S
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="1.6s" begin="0.39s" repeatCount="indefinite" />
+      </text>
     </g>
 
     <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">440</text>
   </g>
 
   <g transform="translate(604, 72)">
-    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010" />
+    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010">
+      <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="2.2s" begin="0.51s" repeatCount="indefinite" />
+    </rect>
     <text x="89.0" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">Repositories</text>
 
     <g transform="translate(89.0, 90)">
+      <path id="orbit3" d="M 0 -44 A 44 44 0 1 1 0 44 A 44 44 0 1 1 0 -44" fill="none" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#350015" stroke-width="8" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#FF6633" stroke-width="8"
         stroke-linecap="round" transform="rotate(-90)"
-        stroke-dasharray="252.07 276.46" />
-      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">A+</text>
+        stroke-dasharray="0 276.46">
+        <animate attributeName="stroke-dasharray" from="0 276.46" to="252.07 276.46" dur="1.1s" begin="0.51s" fill="freeze" />
+        <animate attributeName="stroke-width" values="8;9.4;8" dur="1.6s" begin="0.51s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3.4" fill="#FF6633">
+        <animateMotion dur="3.8s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#orbit3" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.1s" begin="0.51s" repeatCount="indefinite" />
+      </circle>
+      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">A+
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="1.6s" begin="0.51s" repeatCount="indefinite" />
+      </text>
     </g>
 
     <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">31</text>
   </g>
 
   <g transform="translate(797, 72)">
-    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010" />
+    <rect width="178" height="198" rx="10" fill="#110B16" stroke="#1A0010">
+      <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="2.2s" begin="0.63s" repeatCount="indefinite" />
+    </rect>
     <text x="89.0" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">Pull Requests</text>
 
     <g transform="translate(89.0, 90)">
+      <path id="orbit4" d="M 0 -44 A 44 44 0 1 1 0 44 A 44 44 0 1 1 0 -44" fill="none" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#350015" stroke-width="8" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#FF6633" stroke-width="8"
         stroke-linecap="round" transform="rotate(-90)"
-        stroke-dasharray="270.08 276.46" />
-      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">A+</text>
+        stroke-dasharray="0 276.46">
+        <animate attributeName="stroke-dasharray" from="0 276.46" to="270.08 276.46" dur="1.1s" begin="0.63s" fill="freeze" />
+        <animate attributeName="stroke-width" values="8;9.4;8" dur="1.6s" begin="0.63s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3.4" fill="#FF6633">
+        <animateMotion dur="4.0s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#orbit4" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.1s" begin="0.63s" repeatCount="indefinite" />
+      </circle>
+      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">A+
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="1.6s" begin="0.63s" repeatCount="indefinite" />
+      </text>
     </g>
 
     <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">127</text>

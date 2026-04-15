@@ -15,7 +15,7 @@
 <div align="center">
 
 <img width="49%" src="./assets/top-langs-cyberpunk.svg" />
-<img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=dario-gms&show_icons=true&count_private=true&bg_color=0d0d0d&title_color=ff003c&text_color=00cfff&icon_color=ff6633&border_color=1a0010&hide_border=true" />
+<img width="49%" src="./assets/github-stats-cyberpunk.svg" />
 
 </div>
 

@@ -4,13 +4,11 @@
 from __future__ import annotations
 
 import argparse
-import json
 import os
-import urllib.error
-import urllib.parse
-import urllib.request
 from pathlib import Path
 from typing import Dict, List, Tuple
+
+from github_metrics import collect_core_metrics
 
 
 CARD_WIDTH = 1000
@@ -44,73 +42,6 @@ GRADE_STEPS: List[Tuple[float, str]] = [
 ]
 
 
-def github_get_json(url: str, token: str | None, accept: str = "application/vnd.github+json") -> object:
-    headers = {
-        "Accept": accept,
-        "User-Agent": "profile-evaluation-generator",
-    }
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-
-    request = urllib.request.Request(url, headers=headers)
-    try:
-        with urllib.request.urlopen(request, timeout=20) as response:
-            return json.loads(response.read().decode("utf-8"))
-    except urllib.error.HTTPError as err:
-        detail = err.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"GitHub API error {err.code}: {detail}") from err
-    except urllib.error.URLError as err:
-        raise RuntimeError(f"Network error while calling GitHub API: {err}") from err
-
-
-def fetch_repositories(username: str, token: str | None) -> List[dict]:
-    repos: List[dict] = []
-    page = 1
-    while True:
-        query = urllib.parse.urlencode(
-            {"per_page": 100, "page": page, "type": "owner", "sort": "updated"}
-        )
-        url = f"https://api.github.com/users/{username}/repos?{query}"
-        batch = github_get_json(url, token)
-        if not isinstance(batch, list) or not batch:
-            break
-        repos.extend(batch)
-        page += 1
-    return repos
-
-
-def fetch_search_total(kind: str, query: str, token: str | None, accept: str = "application/vnd.github+json") -> int:
-    encoded_q = urllib.parse.quote_plus(query)
-    url = f"https://api.github.com/search/{kind}?q={encoded_q}&per_page=1"
-    payload = github_get_json(url, token, accept=accept)
-    if isinstance(payload, dict):
-        return int(payload.get("total_count", 0))
-    return 0
-
-
-def collect_metrics(username: str, token: str | None) -> Dict[str, float]:
-    user_payload = github_get_json(f"https://api.github.com/users/{username}", token)
-    if not isinstance(user_payload, dict):
-        raise RuntimeError("Unexpected payload when loading user profile.")
-
-    repos = fetch_repositories(username, token)
-    own_repos = [repo for repo in repos if not repo.get("fork")]
-
-    stars_total = sum(int(repo.get("stargazers_count", 0)) for repo in own_repos)
-    repos_total = int(user_payload.get("public_repos", 0))
-    followers_total = int(user_payload.get("followers", 0))
-    prs_total = fetch_search_total("issues", f"author:{username} type:pr", token)
-    commits_total = fetch_search_total("commits", f"author:{username}", token)
-
-    return {
-        "stars": float(stars_total),
-        "commits": float(commits_total),
-        "followers": float(followers_total),
-        "repos": float(repos_total),
-        "pull_requests": float(prs_total),
-    }
-
-
 def metric_grade(value: float, target: float) -> Tuple[str, float]:
     ratio = 0.0 if target <= 0 else value / target
     for min_ratio, grade in GRADE_STEPS:
@@ -121,7 +52,7 @@ def metric_grade(value: float, target: float) -> Tuple[str, float]:
 
 def format_metric_value(value: float) -> str:
     if value >= 1000:
-        return f"{value/1000:.1f}k"
+        return f"{value / 1000:.1f}k".replace(".0k", "k")
     return str(int(round(value)))
 
 
@@ -149,27 +80,43 @@ def render_svg(username: str, metrics: Dict[str, float]) -> str:
 
     cards: List[str] = []
 
+    commits_year = int(metrics.get("commits_year", 0))
+
     for idx, (key, label, target) in enumerate(METRIC_TARGETS):
         value = metrics.get(key, 0.0)
         grade, progress = metric_grade(value, target)
         color = grade_color(grade)
         x = card_x0 + idx * (card_w + gap)
-        cx = x + card_w / 2
-        cy = card_y + 90
+        label_text = f"Commits ({commits_year})" if key == "commits" and commits_year else label
+        delay = 0.15 + (idx * 0.12)
         ring_fill = progress * ring_circ
 
         cards.append(
             f"""
   <g transform="translate({x}, {card_y})">
-    <rect width="{card_w}" height="{card_h}" rx="10" fill="#110B16" stroke="#1A0010" />
-    <text x="{card_w/2:.1f}" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">{label}</text>
+    <rect width="{card_w}" height="{card_h}" rx="10" fill="#110B16" stroke="#1A0010">
+      <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="2.2s" begin="{delay:.2f}s" repeatCount="indefinite" />
+    </rect>
+    <text x="{card_w/2:.1f}" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">{label_text}</text>
 
     <g transform="translate({card_w/2:.1f}, 90)">
+      <path id="orbit{idx}" d="M 0 -{ring_radius} A {ring_radius} {ring_radius} 0 1 1 0 {ring_radius} A {ring_radius} {ring_radius} 0 1 1 0 -{ring_radius}" fill="none" />
       <circle cx="0" cy="0" r="{ring_radius}" fill="none" stroke="#350015" stroke-width="8" />
       <circle cx="0" cy="0" r="{ring_radius}" fill="none" stroke="{color}" stroke-width="8"
         stroke-linecap="round" transform="rotate(-90)"
-        stroke-dasharray="{ring_fill:.2f} {ring_circ:.2f}" />
-      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">{grade}</text>
+        stroke-dasharray="0 {ring_circ:.2f}">
+        <animate attributeName="stroke-dasharray" from="0 {ring_circ:.2f}" to="{ring_fill:.2f} {ring_circ:.2f}" dur="1.1s" begin="{delay:.2f}s" fill="freeze" />
+        <animate attributeName="stroke-width" values="8;9.4;8" dur="1.6s" begin="{delay:.2f}s" repeatCount="indefinite" />
+      </circle>
+      <circle r="3.4" fill="{color}">
+        <animateMotion dur="{3.2 + (idx * 0.2):.1f}s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#orbit{idx}" />
+        </animateMotion>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.1s" begin="{delay:.2f}s" repeatCount="indefinite" />
+      </circle>
+      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">{grade}
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="1.6s" begin="{delay:.2f}s" repeatCount="indefinite" />
+      </text>
     </g>
 
     <text x="{card_w/2:.1f}" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">{format_metric_value(value)}</text>
@@ -211,7 +158,7 @@ def main() -> int:
     args = parser.parse_args()
 
     token = os.getenv("GITHUB_TOKEN")
-    metrics = collect_metrics(args.username, token)
+    metrics = collect_core_metrics(args.username, token)
     svg = render_svg(args.username, metrics)
 
     output_path = Path(args.output)

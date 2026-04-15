@@ -7,9 +7,11 @@ on:
       - master
     paths:
       - ".github/workflows/update-top-langs.yml"
+      - "scripts/github_metrics.py"
       - "scripts/generate_top_langs_svg.py"
       - "scripts/generate_contribution_monthly_pulse_svg.py"
       - "scripts/generate_evaluation_cyberpunk_svg.py"
+      - "scripts/generate_github_stats_pulse_svg.py"
   schedule:
     - cron: "17 3 * * *"
   workflow_dispatch:
@@ -38,6 +40,9 @@ jobs:
             --username "$PROFILE_USERNAME" \
             --output assets/top-langs-cyberpunk.svg \
             --top 5
+          python scripts/generate_github_stats_pulse_svg.py \
+            --username "$PROFILE_USERNAME" \
+            --output assets/github-stats-cyberpunk.svg
           python scripts/generate_contribution_monthly_pulse_svg.py \
             --username "$PROFILE_USERNAME" \
             --output assets/contribution-monthly-pulse.svg
@@ -47,13 +52,13 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet -- assets/top-langs-cyberpunk.svg assets/contribution-monthly-pulse.svg assets/evaluation-cyberpunk.svg; then
+          if git diff --quiet -- assets/top-langs-cyberpunk.svg assets/github-stats-cyberpunk.svg assets/contribution-monthly-pulse.svg assets/evaluation-cyberpunk.svg; then
             echo "No changes in generated cards."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/top-langs-cyberpunk.svg assets/contribution-monthly-pulse.svg assets/evaluation-cyberpunk.svg
+          git add assets/top-langs-cyberpunk.svg assets/github-stats-cyberpunk.svg assets/contribution-monthly-pulse.svg assets/evaluation-cyberpunk.svg
           git commit -m "chore: update profile cards"
           git push

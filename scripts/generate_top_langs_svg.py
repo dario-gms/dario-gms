@@ -142,8 +142,12 @@ def build_svg(top_langs: List[Tuple[str, int]], username: str) -> str:
             width = BAR_X + BAR_WIDTH - cursor_x
         else:
             width = (pct / 100.0) * BAR_WIDTH
+        delay = 0.15 + (idx * 0.12)
         parts.append(
-            f'    <rect x="{cursor_x:.4f}" y="{BAR_Y}" width="{width:.4f}" height="{BAR_HEIGHT}" fill="{color}" />'
+            f"""    <rect x="{cursor_x:.4f}" y="{BAR_Y}" width="0" height="{BAR_HEIGHT}" fill="{color}">
+      <animate attributeName="width" from="0" to="{width:.4f}" dur="0.75s" begin="{delay:.2f}s" fill="freeze" />
+      <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="{delay:.2f}s" repeatCount="indefinite" />
+    </rect>"""
         )
         cursor_x += width
 
@@ -153,7 +157,13 @@ def build_svg(top_langs: List[Tuple[str, int]], username: str) -> str:
         cx = 30 if col == 0 else 180
         cy = 86 + (row * 25)
         color = color_for_language(language, idx)
-        legend.append(f'    <circle cx="{cx}" cy="{cy}" r="5" fill="{color}" />')
+        delay = 0.3 + (idx * 0.12)
+        legend.append(
+            f"""    <circle cx="{cx}" cy="{cy}" r="5" fill="{color}">
+      <animate attributeName="r" values="4.2;5.4;4.2" dur="1.4s" begin="{delay:.2f}s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.4s" begin="{delay:.2f}s" repeatCount="indefinite" />
+    </circle>"""
+        )
         legend.append(
             f'    <text x="{cx + 10}" y="{cy + 4}">{escape(language)} {pct:.2f}%</text>'
         )
@@ -173,14 +183,25 @@ def build_svg(top_langs: List[Tuple[str, int]], username: str) -> str:
     <clipPath id="progressClip">
       <rect x="{BAR_X}" y="{BAR_Y}" width="{BAR_WIDTH}" height="{BAR_HEIGHT}" rx="5" />
     </clipPath>
+    <linearGradient id="scanGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00CFFF" stop-opacity="0" />
+      <stop offset="0.5" stop-color="#00CFFF" stop-opacity="0.75" />
+      <stop offset="1" stop-color="#00CFFF" stop-opacity="0" />
+    </linearGradient>
   </defs>
 
   <rect x="0.5" y="0.5" width="{CARD_WIDTH-1}" height="{CARD_HEIGHT-1}" rx="6" fill="url(#bgGradient)" stroke="#1A0010" />
-  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#FF315A">Top Languages by Repo</text>
+  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#FF315A">Top Languages by Repo
+    <animate attributeName="fill-opacity" values="0.85;1;0.85" dur="1.6s" repeatCount="indefinite" />
+  </text>
 
   <rect x="{BAR_X}" y="{BAR_Y}" width="{BAR_WIDTH}" height="{BAR_HEIGHT}" rx="5" fill="#0A0F18" />
   <g clip-path="url(#progressClip)" filter="url(#softGlow)">
 {bar_segments}
+    <rect x="{BAR_X - 34}" y="{BAR_Y - 1}" width="34" height="{BAR_HEIGHT + 2}" fill="url(#scanGradient)" opacity="0">
+      <animate attributeName="x" values="{BAR_X - 34};{BAR_X + BAR_WIDTH};{BAR_X + BAR_WIDTH}" dur="2.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.7;0" dur="2.4s" repeatCount="indefinite" />
+    </rect>
   </g>
 
   <g font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12" fill="#00CFFF">
