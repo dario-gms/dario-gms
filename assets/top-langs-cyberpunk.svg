@@ -17,25 +17,25 @@
 
   <rect x="25" y="55" width="300" height="8" rx="5" fill="#0A0F18" />
   <g clip-path="url(#progressClip)" filter="url(#softGlow)">
-    <rect x="25.0000" y="55" width="133.3333" height="8" fill="#00E5FF" />
-    <rect x="158.3333" y="55" width="50.0000" height="8" fill="#FF6B35" />
-    <rect x="208.3333" y="55" width="50.0000" height="8" fill="#2F6BFF" />
-    <rect x="258.3333" y="55" width="50.0000" height="8" fill="#FF315A" />
-    <rect x="308.3333" y="55" width="16.6667" height="8" fill="#FFB347" />
+    <rect x="25.0000" y="55" width="126.3158" height="8" fill="#00E5FF" />
+    <rect x="151.3158" y="55" width="63.1579" height="8" fill="#2F6BFF" />
+    <rect x="214.4737" y="55" width="47.3684" height="8" fill="#FF6B35" />
+    <rect x="261.8421" y="55" width="47.3684" height="8" fill="#FF315A" />
+    <rect x="309.2105" y="55" width="15.7895" height="8" fill="#FFB347" />
   </g>
 
   <g font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF">
     <circle cx="30" cy="86" r="5" fill="#00E5FF" />
-    <text x="40" y="90">Dart 44.44%</text>
-    <circle cx="180" cy="86" r="5" fill="#FF6B35" />
-    <text x="190" y="90">HTML 16.67%</text>
-    <circle cx="30" cy="111" r="5" fill="#2F6BFF" />
-    <text x="40" y="115">Python 16.67%</text>
+    <text x="40" y="90">Dart 42.11%</text>
+    <circle cx="180" cy="86" r="5" fill="#2F6BFF" />
+    <text x="190" y="90">Python 21.05%</text>
+    <circle cx="30" cy="111" r="5" fill="#FF6B35" />
+    <text x="40" y="115">HTML 15.79%</text>
     <circle cx="180" cy="111" r="5" fill="#FF315A" />
-    <text x="190" y="115">C# 16.67%</text>
+    <text x="190" y="115">C# 15.79%</text>
     <circle cx="30" cy="136" r="5" fill="#FFB347" />
-    <text x="40" y="140">JavaScript 5.56%</text>
+    <text x="40" y="140">JavaScript 5.26%</text>
   </g>
 
-  <text x="25" y="160" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="8" fill="#5C8DA0">Updated: 2026-04-15 04:39 UTC</text>
+  <text x="25" y="160" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="8" fill="#5C8DA0">Updated: 2026-04-15 04:44 UTC</text>
 </svg>
