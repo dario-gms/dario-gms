@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,40:1a0010,100:ff003c&height=220&section=header&text=DÁRIO%20GOMES&fontSize=52&fontColor=00cfff&animation=twinkling&fontAlignY=38&desc=SOFTWARE%20ENGINEER%20%2F%2F%20SYSTEMS%20%2F%2F%20SECURITY&descSize=14&descAlignY=58&descColor=ff6633" />
 
@@ -23,7 +23,7 @@
 
 <div align="center">
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=dario-gms&bg_color=0d0d0d&color=00cfff&line=ff003c&point=ff6633&area=true&area_color=1a0010&hide_border=true&custom_title=CONTRIBUTION+GRID" />
+<img width="100%" src="./assets/contribution-monthly-pulse.svg" />
 
 </div>
 
@@ -32,7 +32,10 @@
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0d0d0d?style=for-the-badge&logo=linkedin&logoColor=00cfff)](https://www.linkedin.com/in/d%C3%A1rio-gomes-73b0a221b/)
+<br />
 [![Email](https://img.shields.io/badge/ProtonMail-0d0d0d?style=for-the-badge&logo=protonmail&logoColor=ff003c)](mailto:dariogms.github@protonmail.com)
+<br />
+`dariogms.github@protonmail.com`
 
 </div>
 

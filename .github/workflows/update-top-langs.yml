@@ -1,4 +1,4 @@
-name: Update Top Languages Card
+name: Update Profile Cards
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
     paths:
       - ".github/workflows/update-top-langs.yml"
       - "scripts/generate_top_langs_svg.py"
+      - "scripts/generate_contribution_monthly_pulse_svg.py"
   schedule:
     - cron: "17 3 * * *"
   workflow_dispatch:
@@ -36,16 +37,19 @@ jobs:
             --username "$PROFILE_USERNAME" \
             --output assets/top-langs-cyberpunk.svg \
             --top 5
+          python scripts/generate_contribution_monthly_pulse_svg.py \
+            --username "$PROFILE_USERNAME" \
+            --output assets/contribution-monthly-pulse.svg
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet -- assets/top-langs-cyberpunk.svg; then
-            echo "No changes in top-langs card."
+          if git diff --quiet -- assets/top-langs-cyberpunk.svg assets/contribution-monthly-pulse.svg; then
+            echo "No changes in generated cards."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/top-langs-cyberpunk.svg
-          git commit -m "chore: update top languages card"
+          git add assets/top-langs-cyberpunk.svg assets/contribution-monthly-pulse.svg
+          git commit -m "chore: update profile cards"
           git push
