@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env python3
-"""Generate a custom automated evaluation card based on GitHub metrics."""
+#!/usr/bin/env python3
+"""Generate a custom automated performance evaluation card."""
 
 from __future__ import annotations
 
@@ -16,30 +16,31 @@ from typing import Dict, List, Tuple
 CARD_WIDTH = 1000
 CARD_HEIGHT = 290
 
+# Relaxed targets for a more permissive grading scale.
 METRIC_TARGETS: List[Tuple[str, str, float]] = [
-    ("stars", "Stars", 250.0),
-    ("commits", "Commits", 1200.0),
-    ("followers", "Followers", 500.0),
-    ("issues", "Issues", 25.0),
-    ("repos", "Repositories", 40.0),
-    ("pull_requests", "Pull Requests", 160.0),
+    ("stars", "Stars", 170.0),
+    ("commits", "Commits", 1100.0),
+    ("followers", "Followers", 380.0),
+    ("repos", "Repositories", 34.0),
+    ("pull_requests", "Pull Requests", 130.0),
 ]
 
-GRADE_STEPS: List[Tuple[float, str, float]] = [
-    (1.80, "S*", 5.0),
-    (1.55, "S+", 4.8),
-    (1.35, "S", 4.6),
-    (1.20, "S-", 4.4),
-    (1.05, "A+", 4.1),
-    (0.90, "A", 3.8),
-    (0.78, "A-", 3.6),
-    (0.66, "B+", 3.3),
-    (0.55, "B", 3.0),
-    (0.46, "B-", 2.8),
-    (0.38, "C+", 2.5),
-    (0.30, "C", 2.2),
-    (0.22, "C-", 2.0),
-    (0.00, "D", 1.7),
+# Grade scale requested by user: S(*,+,-), A(+,-), ... down to D.
+GRADE_STEPS: List[Tuple[float, str]] = [
+    (1.45, "S*"),
+    (1.30, "S+"),
+    (1.15, "S"),
+    (1.02, "S-"),
+    (0.90, "A+"),
+    (0.78, "A"),
+    (0.66, "A-"),
+    (0.56, "B+"),
+    (0.47, "B"),
+    (0.39, "B-"),
+    (0.32, "C+"),
+    (0.25, "C"),
+    (0.19, "C-"),
+    (0.00, "D"),
 ]
 
 
@@ -98,7 +99,6 @@ def collect_metrics(username: str, token: str | None) -> Dict[str, float]:
     stars_total = sum(int(repo.get("stargazers_count", 0)) for repo in own_repos)
     repos_total = int(user_payload.get("public_repos", 0))
     followers_total = int(user_payload.get("followers", 0))
-    issues_total = fetch_search_total("issues", f"author:{username} type:issue", token)
     prs_total = fetch_search_total("issues", f"author:{username} type:pr", token)
     commits_total = fetch_search_total("commits", f"author:{username}", token)
 
@@ -106,54 +106,23 @@ def collect_metrics(username: str, token: str | None) -> Dict[str, float]:
         "stars": float(stars_total),
         "commits": float(commits_total),
         "followers": float(followers_total),
-        "issues": float(issues_total),
         "repos": float(repos_total),
         "pull_requests": float(prs_total),
     }
 
 
-def metric_grade(value: float, target: float) -> Tuple[str, float, float]:
+def metric_grade(value: float, target: float) -> Tuple[str, float]:
     ratio = 0.0 if target <= 0 else value / target
-    for min_ratio, grade, points in GRADE_STEPS:
+    for min_ratio, grade in GRADE_STEPS:
         if ratio >= min_ratio:
-            return grade, points, ratio
-    return "D", 1.7, ratio
+            return grade, min(ratio, 1.0)
+    return "D", min(ratio, 1.0)
 
 
 def format_metric_value(value: float) -> str:
     if value >= 1000:
         return f"{value/1000:.1f}k"
     return str(int(round(value)))
-
-
-def overall_grade(avg_points: float) -> str:
-    if avg_points >= 4.95:
-        return "S*"
-    if avg_points >= 4.7:
-        return "S+"
-    if avg_points >= 4.5:
-        return "S"
-    if avg_points >= 4.3:
-        return "S-"
-    if avg_points >= 4.0:
-        return "A+"
-    if avg_points >= 3.75:
-        return "A"
-    if avg_points >= 3.5:
-        return "A-"
-    if avg_points >= 3.2:
-        return "B+"
-    if avg_points >= 2.95:
-        return "B"
-    if avg_points >= 2.7:
-        return "B-"
-    if avg_points >= 2.4:
-        return "C+"
-    if avg_points >= 2.1:
-        return "C"
-    if avg_points >= 1.9:
-        return "C-"
-    return "D"
 
 
 def grade_color(grade: str) -> str:
@@ -169,44 +138,45 @@ def grade_color(grade: str) -> str:
 
 
 def render_svg(username: str, metrics: Dict[str, float]) -> str:
-    row_markup: List[str] = []
-    grade_points: List[float] = []
-    progress_ratios: List[float] = []
+    # Layout: 5 cards in one row.
+    card_x0 = 25
+    card_y = 72
+    card_w = 178
+    card_h = 198
+    gap = 15
+    ring_radius = 44  # same size as old overall ring
+    ring_circ = 2 * 3.141592653589793 * ring_radius
 
-    start_y = 84
-    row_h = 30
-    bar_w = 250
+    cards: List[str] = []
 
     for idx, (key, label, target) in enumerate(METRIC_TARGETS):
         value = metrics.get(key, 0.0)
-        grade, points, ratio = metric_grade(value, target)
-        grade_points.append(points)
-        progress = min(ratio, 1.0)
-        progress_ratios.append(progress)
+        grade, progress = metric_grade(value, target)
         color = grade_color(grade)
-        y = start_y + (idx * row_h)
-        bar_fill = int(bar_w * progress)
+        x = card_x0 + idx * (card_w + gap)
+        cx = x + card_w / 2
+        cy = card_y + 90
+        ring_fill = progress * ring_circ
 
-        row_markup.append(
+        cards.append(
             f"""
-  <text x="46" y="{y}" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">{label}:</text>
-  <text x="210" y="{y}" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">{format_metric_value(value)}</text>
-  <text x="300" y="{y}" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="{color}">{grade}</text>
-  <rect x="340" y="{y-10}" width="{bar_w}" height="8" rx="4" fill="#0A0F18" />
-  <rect x="340" y="{y-10}" width="{bar_fill}" height="8" rx="4" fill="{color}" />
+  <g transform="translate({x}, {card_y})">
+    <rect width="{card_w}" height="{card_h}" rx="10" fill="#110B16" stroke="#1A0010" />
+    <text x="{card_w/2:.1f}" y="26" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="14" fill="#00CFFF">{label}</text>
+
+    <g transform="translate({card_w/2:.1f}, 90)">
+      <circle cx="0" cy="0" r="{ring_radius}" fill="none" stroke="#350015" stroke-width="8" />
+      <circle cx="0" cy="0" r="{ring_radius}" fill="none" stroke="{color}" stroke-width="8"
+        stroke-linecap="round" transform="rotate(-90)"
+        stroke-dasharray="{ring_fill:.2f} {ring_circ:.2f}" />
+      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">{grade}</text>
+    </g>
+
+    <text x="{card_w/2:.1f}" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">{format_metric_value(value)}</text>
+  </g>
 """
         )
 
-    avg_points = sum(grade_points) / len(grade_points)
-    overall = overall_grade(avg_points)
-    overall_color = grade_color(overall)
-    progress_avg = sum(progress_ratios) / len(progress_ratios)
-
-    ring_radius = 44
-    ring_circ = 2 * 3.141592653589793 * ring_radius
-    ring_fill = max(0.0, min(progress_avg, 1.0)) * ring_circ
-
-    rows = "".join(row_markup)
     return f"""<svg width="{CARD_WIDTH}" height="{CARD_HEIGHT}" viewBox="0 0 {CARD_WIDTH} {CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bgGradient" x1="0" y1="0" x2="{CARD_WIDTH}" y2="{CARD_HEIGHT}" gradientUnits="userSpaceOnUse">
@@ -220,24 +190,12 @@ def render_svg(username: str, metrics: Dict[str, float]) -> str:
 
   <rect x="0.5" y="0.5" width="{CARD_WIDTH - 1}" height="{CARD_HEIGHT - 1}" rx="12" fill="url(#bgGradient)" stroke="#1A2C3D" />
   <text x="30" y="44" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="30" font-weight="700" fill="#00CFFF" filter="url(#titleGlow)">
-    CUSTOM PERFORMANCE EVALUATION
-  </text>
-  <text x="30" y="66" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12" fill="#5CA1B8">
-    stars // commits // followers // issues // repositories // pull requests
+    PERFORMANCE EVALUATION
   </text>
 
-  {rows}
+  {"".join(cards)}
 
-  <g transform="translate(810,145)">
-    <circle cx="0" cy="0" r="{ring_radius}" fill="none" stroke="#350015" stroke-width="8" />
-    <circle cx="0" cy="0" r="{ring_radius}" fill="none" stroke="{overall_color}" stroke-width="8"
-      stroke-linecap="round" transform="rotate(-90)"
-      stroke-dasharray="{ring_fill:.2f} {ring_circ:.2f}" />
-    <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#00CFFF">{overall}</text>
-  </g>
-
-  <text x="810" y="214" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="{overall_color}">OVERALL</text>
-  <text x="{CARD_WIDTH - 24}" y="{CARD_HEIGHT - 16}" text-anchor="end" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#5CA1B8">{username}</text>
+  <text x="{CARD_WIDTH - 20}" y="{CARD_HEIGHT - 16}" text-anchor="end" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#5CA1B8">{username}</text>
 </svg>
 """
 
@@ -265,3 +223,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
