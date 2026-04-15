@@ -23,7 +23,13 @@
 
 <div align="center">
 
-<img width="100%" src="./assets/trophies-cyberpunk.svg" />
+<h3>AVALIAÇÕES TÉCNICAS</h3>
+
+<p><code>Engenharia de Software</code> — <strong>A+</strong></p>
+<p><code>Arquitetura &amp; Design de Sistemas</code> — <strong>A</strong></p>
+<p><code>Hardware &amp; Infraestrutura</code> — <strong>A</strong></p>
+<p><code>Cibersegurança / InfoSec</code> — <strong>A-</strong></p>
+<p><code>IA Aplicada ao Desenvolvimento</code> — <strong>A</strong></p>
 
 </div>
 
