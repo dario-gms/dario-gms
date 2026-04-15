@@ -144,6 +144,12 @@ def fetch_current_year_commits(
     year: int | None = None,
     stats_endpoint: str = DEFAULT_STATS_ENDPOINT,
 ) -> int:
+    # Priority: use the same rendered stats endpoint to keep commit number
+    # aligned with the GitHub Stats card shown in the README.
+    stats_commits = fetch_commits_from_readme_stats(username, endpoint=stats_endpoint)
+    if isinstance(stats_commits, int):
+        return stats_commits
+
     active_year = year if year is not None else dt.date.today().year
     start_time = f"{active_year}-01-01T00:00:00Z"
 
@@ -169,10 +175,6 @@ def fetch_current_year_commits(
         )
         if isinstance(commits, int):
             return commits
-
-    stats_commits = fetch_commits_from_readme_stats(username, endpoint=stats_endpoint)
-    if isinstance(stats_commits, int):
-        return stats_commits
 
     return fetch_search_total(
         "commits",
