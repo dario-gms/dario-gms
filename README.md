@@ -1,62 +1,45 @@
-<div align="center">  
-  
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=200&section=header&text=Dário%20Gomes&fontSize=50&fontColor=00d4ff&animation=twinkling&fontAlignY=35&desc=Desenvolvedor%20•%20Engenharia%20de%20Software&descSize=20&descAlignY=55" /> 
-  
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,40:1a0010,100:ff003c&height=220&section=header&text=DÁRIO%20GOMES&fontSize=52&fontColor=00cfff&animation=twinkling&fontAlignY=38&desc=SOFTWARE%20ENGINEER%20%2F%2F%20SYSTEMS%20%2F%2F%20SECURITY&descSize=14&descAlignY=58&descColor=ff6633" />
+
 </div>
 
----
+<div align="center">
 
-## Sobre mim
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=15&duration=3000&pause=800&color=00CFFF&center=true&vCenter=true&width=520&lines=%3E_+Engenharia+de+Software%3B%3E_+Arquitetura+%26+Design+de+Sistemas%3B%3E_+Hardware+%26+Infraestrutura%3B%3E_+Ciberseguran%C3%A7a+%2F%2F+InfoSec%3B%3E_+IA+como+ferramenta%2C+n%C3%A3o+como+substituto.)
 
-Sou um desenvolvedor apaixonado por **tecnologia, engenharia de software e pelo funcionamento interno dos sistemas**, desde o código até o hardware.
-
-Tenho um grande interesse por **arquitetura, design de sistemas e desempenho**, e ao mesmo tempo sou fascinado por hardware, componentes e infraestrutura. Gosto de entender como tudo funciona por baixo dos panos.
-
-Estou totalmente ambientado ao uso de **IA como ferramenta de apoio**, mas acredito firmemente que **nada substitui estudo, prática e fundamentos sólidos**. A IA é uma aliada, não um caminho rápido.
-
-Também venho me aprofundando cada vez mais em **segurança da informação e cibersegurança**, áreas que considero essenciais para o futuro do mundo digitalizado, onde cada vez mais tudo depende da proteção de dados, sistemas e pessoas.
+</div>
 
 ---
 
 <div align="center">
-  
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dario-gms&theme=radical" />
+
+<img width="49%" src="./assets/top-langs-cyberpunk.svg" />
+<img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=dario-gms&show_icons=true&count_private=true&bg_color=0d0d0d&title_color=ff003c&text_color=00cfff&icon_color=ff6633&border_color=1a0010&hide_border=true" />
 
 </div>
 
 ---
-
-## Estatísticas
 
 <div align="center">
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=dario-gms&theme=radical" />
-<img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=dario-gms&theme=radical" />
-
-</div>
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=dario-gms&bg_color=0d0d0d&color=00cfff&line=ff003c&point=ff6633&area=true&area_color=1a0010&hide_border=true&custom_title=CONTRIBUTION+GRID" />
 
 </div>
 
 ---
-
-## Contato & Redes
 
 <div align="center">
 
-**Email:** `dariogms.github@protonmail.com`  
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-00d4ff?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/d%C3%A1rio-gomes-73b0a221b/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0d0d0d?style=for-the-badge&logo=linkedin&logoColor=00cfff)](https://www.linkedin.com/in/d%C3%A1rio-gomes-73b0a221b/)
+[![Email](https://img.shields.io/badge/ProtonMail-0d0d0d?style=for-the-badge&logo=protonmail&logoColor=ff003c)](mailto:dariogms.github@protonmail.com)
 
 </div>
 
----
+<div align="center">
 
-<div align="center">  
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer&animation=twinkling" />  
-  <img src="https://komarev.com/ghpvc/?username=dario-gms&style=for-the-badge&color=00d4ff" />  
-  
-  <p style="color: #00d4ff; font-family: 'Courier New', monospace; margin-top: 10px; font-size: 14px;">
-    Construindo o futuro digital com segurança e propósito
-  </p>
-  
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff003c,40:1a0010,100:0d0d0d&height=120&section=footer&animation=twinkling" />
+
+![views](https://komarev.com/ghpvc/?username=dario-gms&style=flat-square&color=ff003c&label=PROFILE+VIEWS)
+
 </div>
