@@ -9,7 +9,6 @@ an SVG card using the project's cyberpunk visual style.
 from __future__ import annotations
 
 import argparse
-import datetime as dt
 import json
 import os
 import sys
@@ -126,8 +125,8 @@ def build_svg(top_langs: List[Tuple[str, int]], username: str) -> str:
         # Minimal empty state card.
         return f"""<svg width="{CARD_WIDTH}" height="{CARD_HEIGHT}" viewBox="0 0 {CARD_WIDTH} {CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect x="0.5" y="0.5" width="{CARD_WIDTH-1}" height="{CARD_HEIGHT-1}" rx="6" fill="#090D15" stroke="#1A0010" />
-  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#FF315A">Top Languages by Repo</text>
-  <text x="25" y="92" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12" fill="#00CFFF">No public language data yet for {escape(username)}.</text>
+  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#FF315A">Top Languages by Repo</text>
+  <text x="25" y="92" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF">No public language data yet for {escape(username)}.</text>
 </svg>
 """
 
@@ -159,7 +158,6 @@ def build_svg(top_langs: List[Tuple[str, int]], username: str) -> str:
             f'    <text x="{cx + 10}" y="{cy + 4}">{escape(language)} {pct:.2f}%</text>'
         )
 
-    generated_at = dt.datetime.now(dt.UTC).strftime("%Y-%m-%d %H:%M UTC")
     bar_segments = "\n".join(parts)
     legend_rows = "\n".join(legend)
 
@@ -178,18 +176,16 @@ def build_svg(top_langs: List[Tuple[str, int]], username: str) -> str:
   </defs>
 
   <rect x="0.5" y="0.5" width="{CARD_WIDTH-1}" height="{CARD_HEIGHT-1}" rx="6" fill="url(#bgGradient)" stroke="#1A0010" />
-  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#FF315A">Top Languages by Repo</text>
+  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#FF315A">Top Languages by Repo</text>
 
   <rect x="{BAR_X}" y="{BAR_Y}" width="{BAR_WIDTH}" height="{BAR_HEIGHT}" rx="5" fill="#0A0F18" />
   <g clip-path="url(#progressClip)" filter="url(#softGlow)">
 {bar_segments}
   </g>
 
-  <g font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF">
+  <g font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12" fill="#00CFFF">
 {legend_rows}
   </g>
-
-  <text x="25" y="160" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="8" fill="#5C8DA0">Updated: {generated_at}</text>
 </svg>
 """
 

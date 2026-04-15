@@ -16,11 +16,8 @@
 
   <rect x="0.5" y="0.5" width="999" height="259" rx="10" fill="url(#bgGradient)" stroke="#1A2C3D" />
 
-  <text x="32" y="36" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="22" font-weight="700" fill="#00CFFF">
+  <text x="32" y="38" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="#00CFFF">
     CONTRIBUTION GRID (MONTHLY)
-  </text>
-  <text x="968" y="36" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12" fill="#FF6633" text-anchor="end">
-    12M TOTAL: 1425
   </text>
 
   <line x1="70" y1="62.00" x2="930" y2="62.00" stroke="#113446" stroke-width="1" stroke-dasharray="3 6" opacity="0.7" />
@@ -39,30 +36,23 @@
   <path d="M 70.00 190.66 L 148.18 190.66 L 226.36 207.98 L 304.55 62.00 L 382.73 135.30 L 460.91 203.96 L 539.09 212.00 L 617.27 181.38 L 695.45 209.22 L 773.64 180.14 L 851.82 123.86 L 930.00 206.12" fill="none" stroke="#00CFFF" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" />
 
   
-  <circle r="4.5" fill="#FF6633">
+  <circle r="5" fill="#FF6633">
     <animateMotion dur="2.4s" repeatCount="indefinite" rotate="auto">
       <mpath href="#pulsePath" />
     </animateMotion>
   </circle>
 
 
-  <text x="70.00" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">MAY</text>
-  <text x="148.18" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">JUN</text>
-  <text x="226.36" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">JUL</text>
-  <text x="304.55" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">AUG</text>
-  <text x="382.73" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">SEP</text>
-  <text x="460.91" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">OCT</text>
-  <text x="539.09" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">NOV</text>
-  <text x="617.27" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">DEC</text>
-  <text x="695.45" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">JAN</text>
-  <text x="773.64" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">FEB</text>
-  <text x="851.82" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">MAR</text>
-  <text x="930.00" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="11" fill="#00CFFF" text-anchor="middle">APR</text>
-
-  <text x="32" y="246" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="10" fill="#5CA1B8">
-    PEAK MONTH: 485 | USER: dario-gms
-  </text>
-  <text x="968" y="246" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="10" fill="#5CA1B8" text-anchor="end">
-    UPDATED: 2026-04-15 04:52 UTC
-  </text>
+  <text x="70.00" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">MAY</text>
+  <text x="148.18" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">JUN</text>
+  <text x="226.36" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">JUL</text>
+  <text x="304.55" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">AUG</text>
+  <text x="382.73" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">SEP</text>
+  <text x="460.91" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">OCT</text>
+  <text x="539.09" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">NOV</text>
+  <text x="617.27" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">DEC</text>
+  <text x="695.45" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">JAN</text>
+  <text x="773.64" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">FEB</text>
+  <text x="851.82" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">MAR</text>
+  <text x="930.00" y="236" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF" text-anchor="middle">APR</text>
 </svg>

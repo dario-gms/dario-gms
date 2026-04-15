@@ -133,11 +133,9 @@ def build_path(points: List[Tuple[float, float]]) -> str:
     return " ".join(segments)
 
 
-def render_svg(series: List[Tuple[str, int]], username: str, generated_at: dt.datetime) -> str:
+def render_svg(series: List[Tuple[str, int]]) -> str:
     values = [value for _, value in series]
     max_value = max(values) if values else 0
-    total_value = sum(values)
-    peak_label = f"{max_value}"
 
     points: List[Tuple[float, float]] = []
     for idx, (_, value) in enumerate(series):
@@ -162,7 +160,7 @@ def render_svg(series: List[Tuple[str, int]], username: str, generated_at: dt.da
         x_labels.append(
             f'<text x="{x:.2f}" y="{CHART_Y + CHART_H + 24}" '
             f'font-family="\'Share Tech Mono\', \'Segoe UI\', sans-serif" '
-            f'font-size="11" fill="#00CFFF" text-anchor="middle">{label}</text>'
+            f'font-size="13" fill="#00CFFF" text-anchor="middle">{label}</text>'
         )
 
     y_lines: List[str] = []
@@ -174,7 +172,7 @@ def render_svg(series: List[Tuple[str, int]], username: str, generated_at: dt.da
         )
 
     pulse_dot = f"""
-  <circle r="4.5" fill="#FF6633">
+  <circle r="5" fill="#FF6633">
     <animateMotion dur="2.4s" repeatCount="indefinite" rotate="auto">
       <mpath href="#pulsePath" />
     </animateMotion>
@@ -183,7 +181,6 @@ def render_svg(series: List[Tuple[str, int]], username: str, generated_at: dt.da
 
     labels = "\n  ".join(x_labels)
     grid = "\n  ".join(y_lines)
-    generated_text = generated_at.strftime("%Y-%m-%d %H:%M UTC")
 
     return f"""<svg width="{CARD_WIDTH}" height="{CARD_HEIGHT}" viewBox="0 0 {CARD_WIDTH} {CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -203,11 +200,8 @@ def render_svg(series: List[Tuple[str, int]], username: str, generated_at: dt.da
 
   <rect x="0.5" y="0.5" width="{CARD_WIDTH - 1}" height="{CARD_HEIGHT - 1}" rx="10" fill="url(#bgGradient)" stroke="#1A2C3D" />
 
-  <text x="32" y="36" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="22" font-weight="700" fill="#00CFFF">
+  <text x="32" y="38" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="#00CFFF">
     CONTRIBUTION GRID (MONTHLY)
-  </text>
-  <text x="{CARD_WIDTH - 32}" y="36" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12" fill="#FF6633" text-anchor="end">
-    12M TOTAL: {total_value}
   </text>
 
   {grid}
@@ -224,13 +218,6 @@ def render_svg(series: List[Tuple[str, int]], username: str, generated_at: dt.da
   {pulse_dot}
 
   {labels}
-
-  <text x="32" y="{CARD_HEIGHT - 14}" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="10" fill="#5CA1B8">
-    PEAK MONTH: {peak_label} | USER: {username}
-  </text>
-  <text x="{CARD_WIDTH - 32}" y="{CARD_HEIGHT - 14}" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="10" fill="#5CA1B8" text-anchor="end">
-    UPDATED: {generated_text}
-  </text>
 </svg>
 """
 
@@ -254,8 +241,7 @@ def main() -> int:
 
     months = last_12_months(today)
     series = monthly_series(daily, months)
-    now_utc = dt.datetime.now(dt.UTC)
-    svg = render_svg(series, username=args.username, generated_at=now_utc)
+    svg = render_svg(series)
 
     out_path = Path(args.output)
     out_path.parent.mkdir(parents=True, exist_ok=True)
