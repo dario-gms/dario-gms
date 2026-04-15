@@ -152,7 +152,7 @@ def main() -> int:
     parser.add_argument("--username", required=True, help="GitHub username")
     parser.add_argument(
         "--output",
-        default="assets/evaluation-cyberpunk.svg",
+        default="assets/evaluation.svg",
         help="Output SVG path",
     )
     args = parser.parse_args()

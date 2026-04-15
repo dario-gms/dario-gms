@@ -3,7 +3,7 @@
 
 This script fetches public repositories from the GitHub API and computes
 language percentages by repository count (top N languages). It then writes
-an SVG card using the project's cyberpunk visual style.
+an SVG card using the project's profile visual style.
 """
 
 from __future__ import annotations
@@ -216,7 +216,7 @@ def main() -> int:
     parser.add_argument("--username", required=True, help="GitHub username")
     parser.add_argument(
         "--output",
-        default="assets/top-langs-cyberpunk.svg",
+        default="assets/top-langs.svg",
         help="Output SVG path",
     )
     parser.add_argument(

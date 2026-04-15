@@ -14,8 +14,8 @@
 
 <div align="center">
 
-<img width="49%" src="./assets/top-langs-cyberpunk.svg" />
-<img width="49%" src="./assets/github-stats-cyberpunk.svg" />
+<img width="49%" src="./assets/top-langs.svg" />
+<img width="49%" src="./assets/github-stats.svg" />
 
 </div>
 
@@ -23,7 +23,7 @@
 
 <div align="center">
 
-<img width="100%" src="./assets/evaluation-cyberpunk.svg" />
+<img width="100%" src="./assets/evaluation.svg" />
 
 </div>
 

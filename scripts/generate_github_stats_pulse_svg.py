@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate an animated cyberpunk GitHub stats card."""
+"""Generate an animated GitHub stats card."""
 
 from __future__ import annotations
 
@@ -158,7 +158,7 @@ def main() -> int:
     parser.add_argument("--username", required=True, help="GitHub username")
     parser.add_argument(
         "--output",
-        default="assets/github-stats-cyberpunk.svg",
+        default="assets/github-stats.svg",
         help="Output SVG path",
     )
     args = parser.parse_args()
