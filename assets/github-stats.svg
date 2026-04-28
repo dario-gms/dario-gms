@@ -39,7 +39,7 @@
       <animate attributeName="opacity" values="0.5;1;0.5" dur="1.2s" begin="0.45s" repeatCount="indefinite" />
     </circle>
     <text x="9" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">Total PRs:</text>
-    <text x="166" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">128</text>
+    <text x="166" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">130</text>
   </g>
 
   <g transform="translate(18, 112)">
@@ -64,7 +64,7 @@
     <circle cx="0" cy="0" r="32" fill="none" stroke="#350015" stroke-width="6" />
     <circle cx="0" cy="0" r="32" fill="none" stroke="#FF6633" stroke-width="6"
       stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0 201.06">
-      <animate attributeName="stroke-dasharray" from="0 201.06" to="199.20 201.06" dur="1.05s" begin="0.32s" fill="freeze" />
+      <animate attributeName="stroke-dasharray" from="0 201.06" to="199.82 201.06" dur="1.05s" begin="0.32s" fill="freeze" />
       <animate attributeName="stroke-width" values="6;7.6;6" dur="1.6s" repeatCount="indefinite" />
     </circle>
     <circle r="2.6" fill="#FF6633">
