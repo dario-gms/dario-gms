@@ -268,8 +268,8 @@ def main() -> int:
     parser.add_argument(
         "--top",
         type=int,
-        default=5,
-        help="How many languages to render (default: 5)",
+        default=6,
+        help="How many languages to render (default: 6)",
     )
     parser.add_argument(
         "--include-forks",

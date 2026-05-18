@@ -39,7 +39,7 @@ jobs:
           python scripts/generate_top_langs_svg.py \
             --username "$PROFILE_USERNAME" \
             --output assets/top-langs.svg \
-            --top 5
+            --top 6
           python scripts/generate_github_stats_pulse_svg.py \
             --username "$PROFILE_USERNAME" \
             --output assets/github-stats.svg
