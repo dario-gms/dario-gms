@@ -26,14 +26,14 @@
   <line x1="70" y1="174.50" x2="930" y2="174.50" stroke="#113446" stroke-width="1" stroke-dasharray="3 6" opacity="0.7" />
   <line x1="70" y1="212.00" x2="930" y2="212.00" stroke="#113446" stroke-width="1" stroke-dasharray="3 6" opacity="0.7" />
 
-  <path d="M 70.00 190.66 L 148.18 207.98 L 226.36 62.00 L 304.55 135.30 L 382.73 203.96 L 460.91 212.00 L 539.09 181.38 L 617.27 209.22 L 695.45 180.14 L 773.64 123.86 L 851.82 197.46 L 930.00 206.74 L 930.00 212.00 L 70.00 212.00 Z" fill="url(#areaGradient)" />
+  <path d="M 70.00 190.66 L 148.18 207.98 L 226.36 62.00 L 304.55 135.30 L 382.73 203.96 L 460.91 212.00 L 539.09 181.38 L 617.27 209.22 L 695.45 180.14 L 773.64 123.86 L 851.82 197.46 L 930.00 205.20 L 930.00 212.00 L 70.00 212.00 Z" fill="url(#areaGradient)" />
 
-  <path id="pulsePath" d="M 70.00 190.66 L 148.18 207.98 L 226.36 62.00 L 304.55 135.30 L 382.73 203.96 L 460.91 212.00 L 539.09 181.38 L 617.27 209.22 L 695.45 180.14 L 773.64 123.86 L 851.82 197.46 L 930.00 206.74" fill="none" stroke="#FF003C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)">
+  <path id="pulsePath" d="M 70.00 190.66 L 148.18 207.98 L 226.36 62.00 L 304.55 135.30 L 382.73 203.96 L 460.91 212.00 L 539.09 181.38 L 617.27 209.22 L 695.45 180.14 L 773.64 123.86 L 851.82 197.46 L 930.00 205.20" fill="none" stroke="#FF003C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)">
     <animate attributeName="stroke-width" values="2.8;4.2;2.8" dur="1.15s" repeatCount="indefinite" />
     <animate attributeName="opacity" values="0.92;1;0.92" dur="1.15s" repeatCount="indefinite" />
   </path>
 
-  <path d="M 70.00 190.66 L 148.18 207.98 L 226.36 62.00 L 304.55 135.30 L 382.73 203.96 L 460.91 212.00 L 539.09 181.38 L 617.27 209.22 L 695.45 180.14 L 773.64 123.86 L 851.82 197.46 L 930.00 206.74" fill="none" stroke="#00CFFF" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" />
+  <path d="M 70.00 190.66 L 148.18 207.98 L 226.36 62.00 L 304.55 135.30 L 382.73 203.96 L 460.91 212.00 L 539.09 181.38 L 617.27 209.22 L 695.45 180.14 L 773.64 123.86 L 851.82 197.46 L 930.00 205.20" fill="none" stroke="#00CFFF" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" />
 
   
   <circle r="5" fill="#FF6633">
