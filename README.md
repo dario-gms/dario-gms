@@ -23,6 +23,14 @@
 
 <div align="center">
 
+<img width="100%" src="./assets/top-langs-repo-count.svg" />
+
+</div>
+
+---
+
+<div align="center">
+
 <img width="100%" src="./assets/evaluation.svg" />
 
 </div>
