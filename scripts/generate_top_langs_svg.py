@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Generate a custom Top Languages by Repo SVG card.
+"""Generate a custom Top Languages SVG card.
 
 This script fetches public repositories from the GitHub API and computes
-language percentages by repository count (top N languages). It then writes
+language percentages by code size in bytes (top N languages). It then writes
 an SVG card using the project's profile visual style.
 """
 
@@ -88,18 +88,64 @@ def fetch_repositories(username: str, token: str | None) -> List[dict]:
     return repos
 
 
+def fetch_repo_languages(languages_url: str, token: str | None) -> Dict[str, int]:
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "profile-top-langs-generator",
+    }
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    request = urllib.request.Request(languages_url, headers=headers)
+    try:
+        with urllib.request.urlopen(request, timeout=20) as response:
+            payload = response.read().decode("utf-8")
+            data = json.loads(payload)
+    except urllib.error.HTTPError as err:
+        details = err.read().decode("utf-8", errors="replace")
+        if err.code == 403 and "rate limit exceeded" in details.lower():
+            return {}
+        raise RuntimeError(
+            f"GitHub API error {err.code} while fetching repo languages: {details}"
+        ) from err
+    except urllib.error.URLError as err:
+        raise RuntimeError(f"Network error while fetching repo languages: {err}") from err
+
+    if not isinstance(data, dict):
+        return {}
+
+    languages: Dict[str, int] = {}
+    for name, bytes_count in data.items():
+        try:
+            languages[str(name)] = int(bytes_count)
+        except (TypeError, ValueError):
+            continue
+    return languages
+
+
 def select_top_languages(
-    repos: Iterable[dict], top_n: int, include_forks: bool
+    repos: Iterable[dict], top_n: int, include_forks: bool, token: str | None
 ) -> List[Tuple[str, int]]:
     counts: Counter[str] = Counter()
-
+    primary_counts: Counter[str] = Counter()
     for repo in repos:
         if not include_forks and repo.get("fork"):
             continue
-        language = repo.get("language")
-        if not language:
+
+        primary_language = repo.get("language")
+        if primary_language:
+            primary_counts[str(primary_language)] += 1
+
+        languages_url = repo.get("languages_url")
+        if not languages_url:
             continue
-        counts[language] += 1
+        repo_languages = fetch_repo_languages(str(languages_url), token)
+        for language, bytes_count in repo_languages.items():
+            counts[language] += bytes_count
+
+    # Fallback for unauthenticated local runs when the rate limit is reached.
+    if not counts and primary_counts:
+        counts = primary_counts
 
     # Deterministic ordering for ties, favoring the intended visual order.
     def rank(item: Tuple[str, int]) -> Tuple[int, int, str]:
@@ -125,7 +171,7 @@ def build_svg(top_langs: List[Tuple[str, int]], username: str) -> str:
         # Minimal empty state card.
         return f"""<svg width="{CARD_WIDTH}" height="{CARD_HEIGHT}" viewBox="0 0 {CARD_WIDTH} {CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect x="0.5" y="0.5" width="{CARD_WIDTH-1}" height="{CARD_HEIGHT-1}" rx="6" fill="#090D15" stroke="#1A0010" />
-  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#FF315A">Top Languages by Repo</text>
+  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#FF315A">Top Languages</text>
   <text x="25" y="92" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13" fill="#00CFFF">No public language data yet for {escape(username)}.</text>
 </svg>
 """
@@ -191,7 +237,7 @@ def build_svg(top_langs: List[Tuple[str, int]], username: str) -> str:
   </defs>
 
   <rect x="0.5" y="0.5" width="{CARD_WIDTH-1}" height="{CARD_HEIGHT-1}" rx="6" fill="url(#bgGradient)" stroke="#1A0010" />
-  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#FF315A">Top Languages by Repo
+  <text x="25" y="35" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="21" font-weight="600" fill="#FF315A">Top Languages
     <animate attributeName="fill-opacity" values="0.85;1;0.85" dur="1.6s" repeatCount="indefinite" />
   </text>
 
@@ -238,7 +284,12 @@ def main() -> int:
 
     token = os.getenv("GITHUB_TOKEN")
     repos = fetch_repositories(args.username, token)
-    top_langs = select_top_languages(repos, top_n=args.top, include_forks=args.include_forks)
+    top_langs = select_top_languages(
+        repos,
+        top_n=args.top,
+        include_forks=args.include_forks,
+        token=token,
+    )
     svg = build_svg(top_langs, username=args.username)
 
     output_path = Path(args.output)
