@@ -23,7 +23,7 @@
       <animate attributeName="opacity" values="0.5;1;0.5" dur="1.2s" begin="0.25s" repeatCount="indefinite" />
     </circle>
     <text x="9" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">Total Stars:</text>
-    <text x="166" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">123</text>
+    <text x="166" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">124</text>
   </g>
 
   <g transform="translate(18, 68)">
@@ -39,7 +39,7 @@
       <animate attributeName="opacity" values="0.5;1;0.5" dur="1.2s" begin="0.45s" repeatCount="indefinite" />
     </circle>
     <text x="9" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">Total PRs:</text>
-    <text x="166" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">136</text>
+    <text x="166" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">137</text>
   </g>
 
   <g transform="translate(18, 112)">
@@ -47,7 +47,7 @@
       <animate attributeName="opacity" values="0.5;1;0.5" dur="1.2s" begin="0.55s" repeatCount="indefinite" />
     </circle>
     <text x="9" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">Followers:</text>
-    <text x="166" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">441</text>
+    <text x="166" y="0" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="12.5" fill="#00CFFF">442</text>
   </g>
 
   <g transform="translate(18, 134)">
