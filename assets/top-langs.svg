@@ -25,27 +25,27 @@
   <rect x="25" y="55" width="300" height="8" rx="5" fill="#0A0F18" />
   <g clip-path="url(#progressClip)" filter="url(#softGlow)">
     <rect x="25.0000" y="55" width="0" height="8" fill="#FF315A">
-      <animate attributeName="width" from="0" to="256.5029" dur="0.75s" begin="0.15s" fill="freeze" />
+      <animate attributeName="width" from="0" to="256.6320" dur="0.75s" begin="0.15s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.15s" repeatCount="indefinite" />
     </rect>
-    <rect x="281.5029" y="55" width="0" height="8" fill="#FF6B35">
-      <animate attributeName="width" from="0" to="14.5330" dur="0.75s" begin="0.27s" fill="freeze" />
+    <rect x="281.6320" y="55" width="0" height="8" fill="#FF6B35">
+      <animate attributeName="width" from="0" to="14.4898" dur="0.75s" begin="0.27s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.27s" repeatCount="indefinite" />
     </rect>
-    <rect x="296.0358" y="55" width="0" height="8" fill="#00E5FF">
-      <animate attributeName="width" from="0" to="9.5158" dur="0.75s" begin="0.39s" fill="freeze" />
+    <rect x="296.1218" y="55" width="0" height="8" fill="#00E5FF">
+      <animate attributeName="width" from="0" to="9.4875" dur="0.75s" begin="0.39s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.39s" repeatCount="indefinite" />
     </rect>
-    <rect x="305.5516" y="55" width="0" height="8" fill="#2F6BFF">
-      <animate attributeName="width" from="0" to="7.9454" dur="0.75s" begin="0.51s" fill="freeze" />
+    <rect x="305.6094" y="55" width="0" height="8" fill="#2F6BFF">
+      <animate attributeName="width" from="0" to="7.9218" dur="0.75s" begin="0.51s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.51s" repeatCount="indefinite" />
     </rect>
-    <rect x="313.4970" y="55" width="0" height="8" fill="#FFB347">
-      <animate attributeName="width" from="0" to="5.9307" dur="0.75s" begin="0.63s" fill="freeze" />
+    <rect x="313.5312" y="55" width="0" height="8" fill="#FFB347">
+      <animate attributeName="width" from="0" to="5.9131" dur="0.75s" begin="0.63s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.63s" repeatCount="indefinite" />
     </rect>
-    <rect x="319.4277" y="55" width="0" height="8" fill="#44D07D">
-      <animate attributeName="width" from="0" to="5.5723" dur="0.75s" begin="0.75s" fill="freeze" />
+    <rect x="319.4443" y="55" width="0" height="8" fill="#44D07D">
+      <animate attributeName="width" from="0" to="5.5557" dur="0.75s" begin="0.75s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.75s" repeatCount="indefinite" />
     </rect>
     <rect x="-9" y="54" width="34" height="10" fill="url(#scanGradient)" opacity="0">
@@ -59,31 +59,31 @@
       <animate attributeName="r" values="4.2;5.4;4.2" dur="1.4s" begin="0.30s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0.7;1;0.7" dur="1.4s" begin="0.30s" repeatCount="indefinite" />
     </circle>
-    <text x="40" y="90">C# 85.50%</text>
+    <text x="40" y="90">C# 85.54%</text>
     <circle cx="180" cy="86" r="5" fill="#FF6B35">
       <animate attributeName="r" values="4.2;5.4;4.2" dur="1.4s" begin="0.42s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0.7;1;0.7" dur="1.4s" begin="0.42s" repeatCount="indefinite" />
     </circle>
-    <text x="190" y="90">HTML 4.84%</text>
+    <text x="190" y="90">HTML 4.83%</text>
     <circle cx="30" cy="111" r="5" fill="#00E5FF">
       <animate attributeName="r" values="4.2;5.4;4.2" dur="1.4s" begin="0.54s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0.7;1;0.7" dur="1.4s" begin="0.54s" repeatCount="indefinite" />
     </circle>
-    <text x="40" y="115">Dart 3.17%</text>
+    <text x="40" y="115">Dart 3.16%</text>
     <circle cx="180" cy="111" r="5" fill="#2F6BFF">
       <animate attributeName="r" values="4.2;5.4;4.2" dur="1.4s" begin="0.66s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0.7;1;0.7" dur="1.4s" begin="0.66s" repeatCount="indefinite" />
     </circle>
-    <text x="190" y="115">Python 2.65%</text>
+    <text x="190" y="115">Python 2.64%</text>
     <circle cx="30" cy="136" r="5" fill="#FFB347">
       <animate attributeName="r" values="4.2;5.4;4.2" dur="1.4s" begin="0.78s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0.7;1;0.7" dur="1.4s" begin="0.78s" repeatCount="indefinite" />
     </circle>
-    <text x="40" y="140">PHP 1.98%</text>
+    <text x="40" y="140">PHP 1.97%</text>
     <circle cx="180" cy="136" r="5" fill="#44D07D">
       <animate attributeName="r" values="4.2;5.4;4.2" dur="1.4s" begin="0.90s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0.7;1;0.7" dur="1.4s" begin="0.90s" repeatCount="indefinite" />
     </circle>
-    <text x="190" y="140">C 1.86%</text>
+    <text x="190" y="140">C 1.85%</text>
   </g>
 </svg>
