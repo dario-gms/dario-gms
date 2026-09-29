@@ -53,24 +53,24 @@
     <g transform="translate(89.0, 90)">
       <path id="orbit1" d="M 0 -44 A 44 44 0 1 1 0 44 A 44 44 0 1 1 0 -44" fill="none" />
       <circle cx="0" cy="0" r="44" fill="none" stroke="#350015" stroke-width="8" />
-      <circle cx="0" cy="0" r="44" fill="none" stroke="#8A9AA7" stroke-width="8"
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#4AB1FF" stroke-width="8"
         stroke-linecap="round" transform="rotate(-90)"
         stroke-dasharray="0 276.46">
-        <animate attributeName="stroke-dasharray" from="0 276.46" to="52.28 276.46" dur="1.1s" begin="0.27s" fill="freeze" />
+        <animate attributeName="stroke-dasharray" from="0 276.46" to="58.56 276.46" dur="1.1s" begin="0.27s" fill="freeze" />
         <animate attributeName="stroke-width" values="8;9.4;8" dur="1.6s" begin="0.27s" repeatCount="indefinite" />
       </circle>
-      <circle r="3.4" fill="#8A9AA7">
+      <circle r="3.4" fill="#4AB1FF">
         <animateMotion dur="3.4s" repeatCount="indefinite" rotate="auto">
           <mpath href="#orbit1" />
         </animateMotion>
         <animate attributeName="opacity" values="0.5;1;0.5" dur="1.1s" begin="0.27s" repeatCount="indefinite" />
       </circle>
-      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">D
+      <text x="0" y="8" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#00CFFF">C-
         <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="1.6s" begin="0.27s" repeatCount="indefinite" />
       </text>
     </g>
 
-    <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">208</text>
+    <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">233</text>
   </g>
 
   <g transform="translate(411, 72)">
@@ -157,7 +157,7 @@
       </text>
     </g>
 
-    <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">166</text>
+    <text x="89.0" y="170" text-anchor="middle" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="16" fill="#FF6633">167</text>
   </g>
 
 
