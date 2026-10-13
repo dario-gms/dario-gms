@@ -17,7 +17,7 @@
     LANGUAGES BY REPO COUNT
   </text>
   <text x="30" y="64" font-family="'Share Tech Mono', 'Segoe UI', sans-serif" font-size="13.5" fill="#5CA1B8">
-    primary language per repository • repos analyzed: 31 • languages: 7
+    primary language per repository • repos analyzed: 32 • languages: 7
   </text>
 
   <rect x="30.00" y="79.00" width="940.00" height="10.00" rx="5" fill="#0A0F18" />
