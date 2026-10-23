@@ -25,27 +25,27 @@
   <rect x="25" y="55" width="300" height="8" rx="5" fill="#0A0F18" />
   <g clip-path="url(#progressClip)" filter="url(#softGlow)">
     <rect x="25.0000" y="55" width="0" height="8" fill="#FF315A">
-      <animate attributeName="width" from="0" to="272.9637" dur="0.75s" begin="0.15s" fill="freeze" />
+      <animate attributeName="width" from="0" to="272.9747" dur="0.75s" begin="0.15s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.15s" repeatCount="indefinite" />
     </rect>
-    <rect x="297.9637" y="55" width="0" height="8" fill="#FF6B35">
-      <animate attributeName="width" from="0" to="9.0332" dur="0.75s" begin="0.27s" fill="freeze" />
+    <rect x="297.9747" y="55" width="0" height="8" fill="#FF6B35">
+      <animate attributeName="width" from="0" to="9.0295" dur="0.75s" begin="0.27s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.27s" repeatCount="indefinite" />
     </rect>
-    <rect x="306.9969" y="55" width="0" height="8" fill="#00E5FF">
-      <animate attributeName="width" from="0" to="5.9147" dur="0.75s" begin="0.39s" fill="freeze" />
+    <rect x="307.0042" y="55" width="0" height="8" fill="#00E5FF">
+      <animate attributeName="width" from="0" to="5.9123" dur="0.75s" begin="0.39s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.39s" repeatCount="indefinite" />
     </rect>
-    <rect x="312.9116" y="55" width="0" height="8" fill="#2F6BFF">
-      <animate attributeName="width" from="0" to="4.9386" dur="0.75s" begin="0.51s" fill="freeze" />
+    <rect x="312.9165" y="55" width="0" height="8" fill="#2F6BFF">
+      <animate attributeName="width" from="0" to="4.9366" dur="0.75s" begin="0.51s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.51s" repeatCount="indefinite" />
     </rect>
-    <rect x="317.8502" y="55" width="0" height="8" fill="#FFB347">
-      <animate attributeName="width" from="0" to="3.6863" dur="0.75s" begin="0.63s" fill="freeze" />
+    <rect x="317.8531" y="55" width="0" height="8" fill="#FFB347">
+      <animate attributeName="width" from="0" to="3.6848" dur="0.75s" begin="0.63s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.63s" repeatCount="indefinite" />
     </rect>
-    <rect x="321.5365" y="55" width="0" height="8" fill="#44D07D">
-      <animate attributeName="width" from="0" to="3.4635" dur="0.75s" begin="0.75s" fill="freeze" />
+    <rect x="321.5379" y="55" width="0" height="8" fill="#44D07D">
+      <animate attributeName="width" from="0" to="3.4621" dur="0.75s" begin="0.75s" fill="freeze" />
       <animate attributeName="opacity" values="0.82;1;0.82" dur="1.8s" begin="0.75s" repeatCount="indefinite" />
     </rect>
     <rect x="-9" y="54" width="34" height="10" fill="url(#scanGradient)" opacity="0">
